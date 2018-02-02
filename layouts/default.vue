@@ -32,13 +32,9 @@
       HotGoods,
       BannerHot
     },
-    // created() {
-    //   this.getHotGoods()
-    // },
     methods: {
       ...mapActions([
-        'getBehaviorAdd',
-        'getHotGoods'
+        'getBehaviorAdd'
       ])
     },
     computed: {
