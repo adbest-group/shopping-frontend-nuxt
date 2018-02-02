@@ -42,8 +42,8 @@
             <upvote class="testUpvote" :getThumbsAdd="getThumbsAddDetail" :id="goodsDetail.goodId"></upvote>
           </div>
         </div>
-        <Recommend v-if="maybeLike>3" :list="maybeLike" hd="Deals and coupons you may like" :behaviorFun='getBehaviorAdd'></Recommend>
-        <Recommend v-if="mallHot.length>3" :list="mallHot" :hd="`${goodsDetail.mallName} hot goods`" :behaviorFun='getBehaviorAdd'></Recommend>
+        <Recommend v-if="maybeLike.length > 3" :list="maybeLike" hd="Deals and coupons you may like" :behaviorFun='getBehaviorAdd'></Recommend>
+        <Recommend v-if="mallHot.length > 3" :list="mallHot" :hd="`${goodsDetail.mallName} hot goods`" :behaviorFun='getBehaviorAdd'></Recommend>
       </div>
     </div>
 </template>

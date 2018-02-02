@@ -8,7 +8,9 @@
         <right-stores></right-stores>
         <hot-goods :hotGoods='hotGoods' :behaviorFun='getBehaviorAdd'></hot-goods>
       </div>
-      <nuxt/>
+      <div class="main-content">
+        <nuxt/>
+      </div>
     </div>
     <gt-footer></gt-footer>
   </div>

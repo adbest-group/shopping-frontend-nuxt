@@ -3,7 +3,7 @@
     <div class="panel">
       <div class="product">
         <div v-for="p in goodsList" class="product-item" :key="p.id">
-          <nuxt-link :to="`detail/${p.id}`" target="_blank" @click.native="behaviorFun({type:'1',url:$route.fullPath,goodId:p.id})">
+          <nuxt-link :to="`detail/${p.id}`" @click.native="behaviorFun({type:'1',url:$route.fullPath,goodId:p.id})">
             <div class="pic">
               <div class="subpic"><img :src="p.smallImageUrl" :onerror="errorImg"></div>
             </div>

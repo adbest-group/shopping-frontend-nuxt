@@ -7,7 +7,7 @@
         </div>
         <div class="inner">
           <div v-for="(p, index) in hotGoods" :key="index" class="product-item">
-            <nuxt-link :to="`/detail/${p.id}`" target="_blank" @click.native="behaviorFun({type:'1',url:$route.fullPath,goodId:p.id})">
+            <nuxt-link :to="`/detail/${p.id}`" target="_blank"  @click.native="behaviorFun({type:'1',url:$route.fullPath,goodId:p.id})">
               <div class="pic">
                 <div class="subpic">
                   <img :src="p.smallImageUrl" :onerror="errorImg">
@@ -44,24 +44,21 @@
       this.offsetTop = document.querySelector('#hotGoods').offsetTop
     },
     beforeDestroy() {
-      window.removeEventListener('scroll', this.__resizeHanlderSize)
+      window.removeEventListener('scroll', this.handleScroll)
     },
     methods: {
       handleScroll() {
-        const hotGoodsDom = document.querySelector('#hotGoods')
-        const footerDom = document.querySelector('.bt-footer')
-        var winHeight = window.innerHeight
+        const sidebarDom = document.querySelector('#sidebar')
+        const contentDom = document.querySelector('.main-content')
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
         if (!this.flag) {
           this.flag = true
-          this.offsetTop = hotGoodsDom.offsetTop
+          this.offsetTop = document.querySelector('#hotGoods').offsetTop
         }
 
-        // 防止屏幕过小时  悬浮样式导致的页面抖动  通过比较屏幕高度和（搜索框+热门商品+底部）的高度来控制
-        var fixHeight = 40 + hotGoodsDom.clientHeight + footerDom.clientHeight
+        // 防止屏幕过小时  悬浮样式导致的页面抖动  通过比较内容高度和右侧列表的高度来控制
 
-        console.log(this.offsetTop + ':' + scrollTop)
-        if (scrollTop > this.offsetTop - 40 && winHeight >= fixHeight) {
+        if ((scrollTop >= this.offsetTop - 40) && contentDom.clientHeight >= sidebarDom.clientHeight) {
           this.searchBarFixed = true
         } else {
           this.searchBarFixed = false

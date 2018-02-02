@@ -8,7 +8,7 @@
         <div class="store clearfix">
         <div v-for="(item,index) in stotresList" :key='item.link'  :class="['item',index>3?'bottom':'']">
             <a class="clearfix" :href="item.link" target="_blank">
-            <img :src="item.src">
+              <img :src="item.src">
             </a>
         </div>
         </div>
