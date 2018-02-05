@@ -58,7 +58,6 @@
 </script>
 
 <style >
-  @import "../assets/css/animate.min.css";
   .VueStar{
     position: absolute;
     cursor: pointer;

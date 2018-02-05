@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="layout-default">
     <top-search :behaviorFun='getBehaviorAdd'></top-search>
     <banner-hot v-if="$route.name === 'index'" :list='hotGoods' :behaviorFun='getBehaviorAdd'></banner-hot>
     <div id="main" class="clearfix">
