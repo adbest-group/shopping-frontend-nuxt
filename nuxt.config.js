@@ -1,6 +1,4 @@
 const resolve = require('path').resolve
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
 module.exports = {
   /*
   ** Headers of the page
@@ -24,7 +22,6 @@ module.exports = {
     '~assets/css/common.css',
     '~assets/css/style.css',
     '~assets/css/animate.min.css'
-    // 'element-ui/lib/theme-chalk/index.css'
   ],
   cache: {
     max: 1000,
@@ -37,10 +34,6 @@ module.exports = {
     '~plugins/config',
     '~plugins/vuejs-paginate',
     '~plugins/element-ui'
-    // {
-    //   src: '~plugins/vue-awesome-swiper',
-    //   ssr: false
-    // }
   ],
 
     /*
@@ -88,23 +81,5 @@ module.exports = {
         component: resolve(__dirname, 'pages/notFound.vue')
       })
     }
-    // scrollBehavior(to, from, savedPosition) {
-    //   // savedPosition 只有在 popstate 导航（如按浏览器的返回按钮）时可以获取。
-    //   if (savedPosition) {
-    //     return savedPosition
-    //   } else {
-    //     let position = {}
-    //     // 目标页面子组件少于两个
-    //     if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    //       // 如果目标页面子组件中存在配置了scrollToTop为true
-    //       position = { x: 0, y: 0 }
-    //     }
-    //     // 如果目标页面的url有锚点,  则滚动至锚点所在的位置
-    //     if (to.hash) {
-    //       position = { selector: to.hash }
-    //     }
-    //     return position
-    //   }
-    // }
   }
 }
